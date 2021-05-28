@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class ReadFile {
+public class lector {
 
     File doc;
     FileReader filer;
@@ -31,7 +31,7 @@ public class ReadFile {
      * @return Los arcos
      * @throws IOException
      */
-    public IntGrafo<String, String> arreglosN() throws IOException {
+    public IntGraph<String, String> arreglosN() throws IOException {
         filer = new FileReader(doc);
         buffer = new BufferedReader(filer);
         String linea;
@@ -55,7 +55,7 @@ public class ReadFile {
         pw.println(cadena);
     }
 
-    public IntGrafo<String, String> CostoM() throws IOException {
+    public IntGraph<String, String> CostoM() throws IOException {
         // Lectura del fichero
         filer = new FileReader(doc);
         buffer = new BufferedReader(filer);

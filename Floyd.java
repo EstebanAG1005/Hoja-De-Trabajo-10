@@ -2,8 +2,8 @@ import java.io.IOException;
 
 public class Floyd {
 
-    ReadFile a = new ReadFile();
-    IntGrafo D;
+    lector a = new lector();
+    IntGraph D;
     int[][] P;
     int[] max;
     int centro;
