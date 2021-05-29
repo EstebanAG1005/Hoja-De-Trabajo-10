@@ -1,3 +1,13 @@
+/**
+ * Hoja de Trabajo #10 - Estructura de Datos
+ * --------------------------------------------
+ * @Author Esteban Aldana Guerra
+ * Clase de Algoritmo de Floyd
+ * Referencias de:
+ * https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
+ * https://www.youtube.com/watch?v=xK0ShW9G-Ts
+ */
+
 import java.io.IOException;
 
 public class Floyd {

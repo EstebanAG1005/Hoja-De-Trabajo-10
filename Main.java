@@ -1,3 +1,13 @@
+/**
+ * Hoja de Trabajo #10 - Estructura de Datos
+ * --------------------------------------------
+ * @Author Esteban Aldana Guerra
+ * Clase Main
+ * Referencias de:
+ * https://devs4j.com/2017/11/24/implementa-un-grafo-de-ciudades-en-java/
+ *
+ */
+
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -8,7 +18,6 @@ public class Main {
 
     public static void main(String[] args) {
         Floyd matriz = new Floyd();
-        matriz.CamCorto();
         int selec = 1;
         int opcion;
         Scanner scan = new Scanner(System.in);
@@ -33,7 +42,7 @@ public class Main {
                 String ciudad2 = scan.next();
 
                 if (matriz.D.contains(ciudad1) && matriz.D.contains(ciudad2)) {
-                    System.out.println("\nLa distacnia minima es :" + matriz.D.getEdge(ciudad1, ciudad2));
+                    System.out.println("\nLa distancia minima es :" + matriz.D.getEdge(ciudad1, ciudad2));
                     if (matriz.D.getEdge(ciudad1, ciudad2) != 10000) {
                         System.out.println("La ruta es" + ciudad1);
                         try {

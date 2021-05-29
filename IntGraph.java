@@ -1,3 +1,11 @@
+/**
+ * Hoja de Trabajo #10 - Estructura de Datos
+ * --------------------------------------------
+ * @Author Esteban Aldana Guerra
+ * Clase de Interfaz del grafo
+ * Referencias de:
+ * https://devs4j.com/2017/11/24/implementa-un-grafo-de-ciudades-en-java/
+ */
 
 public interface IntGraph<K, E> {
 

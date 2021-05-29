@@ -1,3 +1,10 @@
+/**
+ * Hoja de Trabajo #10 - Estructura de Datos
+ * --------------------------------------------
+ * @Author Esteban Aldana Guerra
+ * Clase para el lector del archivo txt
+ */
+
 import java.io.*;
 
 public class lector {
@@ -7,7 +14,7 @@ public class lector {
     BufferedReader buffer;
     FileWriter fw;
     PrintWriter pw;
-    IntGraph graf = new Graph();
+    IntGraph graf = new Graph<>();
 
     public void ReadFile(String direccion) throws FileNotFoundException {
         doc = new File(direccion);

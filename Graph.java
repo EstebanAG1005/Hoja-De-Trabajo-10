@@ -1,3 +1,12 @@
+/**
+ * Hoja de Trabajo #10 - Estructura de Datos
+ * --------------------------------------------
+ * @Author Esteban Aldana Guerra
+ * Clase de Implementacion de interfaz del grafo
+ * Referencias de:
+ * https://devs4j.com/2017/11/24/implementa-un-grafo-de-ciudades-en-java/
+ */
+
 import java.util.Vector;
 
 public class Graph<K, E> implements IntGraph<K, E> {
