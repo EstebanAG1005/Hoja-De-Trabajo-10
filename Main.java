@@ -10,39 +10,38 @@
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 public class Main {
 
     public static void main(String[] args) {
         Floyd matriz = new Floyd();
-        int selec = 1;
+        int op = 0;
         int opcion;
+        boolean salir = true;
         Scanner scan = new Scanner(System.in);
+        String ciudad1;
+        String ciudad2;
 
-        /**
-         * Ciclo que se realiza mientras que la respuesta del usuario no sea 4
-         */
-        while (selec != 4) {
-            System.out.println("Bienvenido al menu  \nLas opciones son :");
+       
+        while (salir) {
+            try{
+            System.out.println("----------------Respuesta al COVID 19-------------------");
             System.out.println("1. Ciudad de Origen-Ciudad de Destino");
-            System.out.println("2. Ciudad dentro del mapa");
-            System.out.println("3. Modificar el mapa");
+            System.out.println("2. Centro del Grafo");
+            System.out.println("3. Modificar el Grafo");
             System.out.println("4. Salir");
             System.out.println("Ingrese una opcion: ");
-            selec = scan.nextInt();
+            op = scan.nextInt();
 
-            if (selec == 1) {
+            if (op == 1) {
                 matriz.CamCorto();
                 System.out.println("Ciudad de Origen: ");
-                String ciudad1 = scan.next();
+                ciudad1 = scan.next();
                 System.out.println("Ciudad de Destino: ");
-                String ciudad2 = scan.next();
+                ciudad2 = scan.next();
 
                 if (matriz.D.contains(ciudad1) && matriz.D.contains(ciudad2)) {
-                    System.out.println("\nLa distancia minima es :" + matriz.D.getEdge(ciudad1, ciudad2));
+                    System.out.println("\nEl recorrido mas corto es :" + matriz.D.getEdge(ciudad1, ciudad2));
                     if (matriz.D.getEdge(ciudad1, ciudad2) != 10000) {
                         System.out.println("La ruta es" + ciudad1);
                         try {
@@ -53,19 +52,19 @@ public class Main {
                         System.out.println("," + ciudad2);
                     }
                 }
-            } else if (selec == 2) {
+            } else if (op == 2) {
                 System.out.println("El centro del grafo es: ");
                 matriz.CentGrafo();
-            } else if (selec == 3) {
+            } else if (op == 3) {
                 System.out.println("1.Interrumpir el flujo entre ciudades");
                 System.out.println("2. Fijar nueva conexión");
                 System.out.println("Ingrese una opción: ");
                 opcion = scan.nextInt();
                 if (opcion == 1) {
                     System.out.println("Ciudad de Origen: ");
-                    String ciudad1 = scan.next();
+                    ciudad1 = scan.next();
                     System.out.println("Ciudad de Destino: ");
-                    String ciudad2 = scan.next();
+                    ciudad2 = scan.next();
                     if (matriz.D.contains(ciudad1) && matriz.D.contains(ciudad2)) {
                         matriz.D.addEdge(ciudad1, ciudad2, 10000);
                         try {
@@ -78,9 +77,9 @@ public class Main {
 
                 if (opcion == 2) {
                     System.out.println("Ciudad de Origen: ");
-                    String ciudad1 = scan.next();
+                    ciudad1 = scan.next();
                     System.out.println("Ciudad de Destino: ");
-                    String ciudad2 = scan.next();
+                    ciudad2 = scan.next();
                     System.out.println("Distancia en KM entre las dos ciudades: ");
                     int dist = scan.nextInt();
                     if (matriz.D.contains(ciudad1) && matriz.D.contains(ciudad2)) {
@@ -97,8 +96,17 @@ public class Main {
                     }
                 }
                 matriz.CamCorto();
+            } if (op == 4){
+                System.out.println("Gracias por utilizar el programa :) ");
+                salir = false;
             }
+            else{
+                System.out.println("Ingrese un numero que se encuentre en el rango correspondiente (1-4)");
+            }
+        } catch(Exception e) {
+            System.out.println("Error, ha ingresado un termino incorrecto");
+            scan.next();
         }
-        System.out.println("Gracias por vuelva pronto");
+    }
     }
 }

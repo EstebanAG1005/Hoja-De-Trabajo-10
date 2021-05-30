@@ -9,6 +9,8 @@
 
 public interface IntGraph<K, E> {
 
+    int getEdge = 0;
+
     public void add(K label);
 
     /**
