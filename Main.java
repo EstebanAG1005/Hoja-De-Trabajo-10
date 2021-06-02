@@ -19,8 +19,6 @@ public class Main {
         int opcion;
         boolean salir = true;
         Scanner scan = new Scanner(System.in);
-        String ciudad1;
-        String ciudad2;
 
        
         while (salir) {
@@ -36,10 +34,9 @@ public class Main {
             if (op == 1) {
                 matriz.CamCorto();
                 System.out.println("Ciudad de Origen: ");
-                ciudad1 = scan.next();
+                String ciudad1 = scan.next();
                 System.out.println("Ciudad de Destino: ");
-                ciudad2 = scan.next();
-
+                String ciudad2 = scan.next();
                 if (matriz.D.contains(ciudad1) && matriz.D.contains(ciudad2)) {
                     System.out.println("\nEl recorrido mas corto es :" + matriz.D.getEdge(ciudad1, ciudad2));
                     if (matriz.D.getEdge(ciudad1, ciudad2) != 10000) {
@@ -62,9 +59,9 @@ public class Main {
                 opcion = scan.nextInt();
                 if (opcion == 1) {
                     System.out.println("Ciudad de Origen: ");
-                    ciudad1 = scan.next();
+                    String ciudad1 = scan.next();
                     System.out.println("Ciudad de Destino: ");
-                    ciudad2 = scan.next();
+                    String ciudad2 = scan.next();
                     if (matriz.D.contains(ciudad1) && matriz.D.contains(ciudad2)) {
                         matriz.D.addEdge(ciudad1, ciudad2, 10000);
                         try {
@@ -77,9 +74,9 @@ public class Main {
 
                 if (opcion == 2) {
                     System.out.println("Ciudad de Origen: ");
-                    ciudad1 = scan.next();
+                    String ciudad1 = scan.next();
                     System.out.println("Ciudad de Destino: ");
-                    ciudad2 = scan.next();
+                    String ciudad2 = scan.next();
                     System.out.println("Distancia en KM entre las dos ciudades: ");
                     int dist = scan.nextInt();
                     if (matriz.D.contains(ciudad1) && matriz.D.contains(ciudad2)) {
@@ -99,9 +96,6 @@ public class Main {
             } if (op == 4){
                 System.out.println("Gracias por utilizar el programa :) ");
                 salir = false;
-            }
-            else{
-                System.out.println("Ingrese un numero que se encuentre en el rango correspondiente (1-4)");
             }
         } catch(Exception e) {
             System.out.println("Error, ha ingresado un termino incorrecto");
